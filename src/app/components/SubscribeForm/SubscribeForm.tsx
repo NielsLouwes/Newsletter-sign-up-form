@@ -27,8 +27,8 @@ export function SubscribeForm() {
     <SubscribeFormStyled.FormContainer>
       <img src={logoMobile} alt="" />
       <SubscribeFormStyled.BodyContainer>
-        <MainTitle>Stay updated!</MainTitle>
-        <body>Join 60,000+ product managers receiving monthly updates on:</body>
+        <SubscribeFormStyled.MainTitle>Stay updated!</SubscribeFormStyled.MainTitle>
+        <body style={{marginBottom: '25px'}}>Join 60,000+ product managers receiving monthly updates on:</body>
         <body>{renderedListItems()}</body>
         <Formik
           initialValues={{ email: '' }}

@@ -2,11 +2,16 @@ import { ErrorMessage, Field } from 'formik';
 import styled from 'styled-components';
 
 const FormContainer = styled.div`
-  /* height: 6px; */
   border: 1px solid black;
   width: 375px;
   background: white;
 `;
+
+const MainTitle = styled.h1`
+  font-size: 2.5rem;
+  margin: 8px;
+  margin-bottom: 25px;
+`
 
 const BodyContainer = styled.div`
   padding: 15px;
@@ -15,7 +20,6 @@ const BodyContainer = styled.div`
 const BottomFormContainer = styled.div`
   display: flex;
   flex-direction: column;
-  /* gap: 15px; */
 `
 
 const SubscribeButton = styled.button`
@@ -66,5 +70,6 @@ export const SubscribeFormStyled = {
   StyledField,
   EmailTitle,
   StyledError,
-  EmailContainer
+  EmailContainer,
+  MainTitle
 };

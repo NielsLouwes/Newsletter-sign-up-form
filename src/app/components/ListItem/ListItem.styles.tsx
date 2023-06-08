@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const StyledListItem = styled.div`
   height: 50px;
   display: flex;
-  width: 80%;
+  width: 98%;
   gap: 15px;
 `;
 
