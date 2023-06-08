@@ -5,7 +5,7 @@ import Icon from '../../assets/icon-list.svg';
 import { SubscribeFormStyled } from './SubscribeForm.styles';
 import { ListItem } from '../ListItem/ListItem';
 
-import { Formik, Form} from 'formik';
+import { Formik, Form } from 'formik';
 
 // Validation schema
 const validationSchema = Yup.object().shape({
@@ -27,7 +27,7 @@ export function SubscribeForm() {
     <SubscribeFormStyled.FormContainer>
       <img src={logoMobile} alt="" />
       <SubscribeFormStyled.BodyContainer>
-        <h1>Stay updated!</h1>
+        <MainTitle>Stay updated!</MainTitle>
         <body>Join 60,000+ product managers receiving monthly updates on:</body>
         <body>{renderedListItems()}</body>
         <Formik
@@ -38,7 +38,7 @@ export function SubscribeForm() {
             console.log(values);
           }}
         >
-          {({ isSubmitting }) => (
+          {({ isSubmitting, errors }) => (
             <Form>
               <SubscribeFormStyled.EmailContainer>
                 <SubscribeFormStyled.EmailTitle>
@@ -49,9 +49,9 @@ export function SubscribeForm() {
                   component="span"
                 />
               </SubscribeFormStyled.EmailContainer>
-
               <SubscribeFormStyled.BottomFormContainer>
                 <SubscribeFormStyled.StyledField
+                  aria-invalid={errors.email ? true : false}
                   type="email"
                   name="email"
                   placeholder="email@company.com"

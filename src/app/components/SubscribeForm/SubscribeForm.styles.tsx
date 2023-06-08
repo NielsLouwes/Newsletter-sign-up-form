@@ -35,18 +35,21 @@ const StyledField = styled(Field)`
   width: 90%;
   font-size: 1rem;
   margin-top: 5px;
+  border-color: ${(props) => (props['aria-invalid'] ? 'hsl(4, 100%, 67%)' : 'initial')};
+
+  ::placeholder {
+    color: ${(props) => (props['aria-invalid'] ? 'hsl(4, 100%, 67%)' : 'initial')};
+  }
 `;
 
 const EmailTitle = styled.span`
   font-size: 0.8rem;
   padding: 2px;
-  margin-bottom: 10px;
 `
 
 const StyledError = styled(ErrorMessage)`
   font-size: 0.8rem;
   padding: 2px;
-  margin-bottom: 10px;
   color: hsl(4, 100%, 67%);
 `
 
