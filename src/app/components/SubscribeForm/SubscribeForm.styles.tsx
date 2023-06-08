@@ -1,10 +1,11 @@
-import { Field } from 'formik';
+import { ErrorMessage, Field } from 'formik';
 import styled from 'styled-components';
 
 const FormContainer = styled.div`
   /* height: 6px; */
   border: 1px solid black;
   width: 375px;
+  background: white;
 `;
 
 const BodyContainer = styled.div`
@@ -14,7 +15,7 @@ const BodyContainer = styled.div`
 const BottomFormContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  /* gap: 15px; */
 `
 
 const SubscribeButton = styled.button`
@@ -33,12 +34,34 @@ const StyledField = styled(Field)`
   margin-bottom: 20px;
   width: 90%;
   font-size: 1rem;
+  margin-top: 5px;
 `;
+
+const EmailTitle = styled.span`
+  font-size: 0.8rem;
+  padding: 2px;
+  margin-bottom: 10px;
+`
+
+const StyledError = styled(ErrorMessage)`
+  font-size: 0.8rem;
+  padding: 2px;
+  margin-bottom: 10px;
+  color: hsl(4, 100%, 67%);
+`
+
+const EmailContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
 
 export const SubscribeFormStyled = {
   FormContainer,
   BodyContainer,
   BottomFormContainer,
   SubscribeButton,
-  StyledField
+  StyledField,
+  EmailTitle,
+  StyledError,
+  EmailContainer
 };

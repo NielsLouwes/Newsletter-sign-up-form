@@ -6,7 +6,8 @@ const StyledApp = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  font-family: 'Roboto'
+  font-family: 'Roboto';
+  background: #242526;
 `;
 
 export function App() {
