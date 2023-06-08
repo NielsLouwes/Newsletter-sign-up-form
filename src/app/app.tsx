@@ -1,25 +1,18 @@
 import styled from 'styled-components';
-import { SubscribeForm } from './components/SubscribeForm';
+import { SubscribeForm } from './components/SubscribeForm/SubscribeForm';
 
 const StyledApp = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  font-family: 'Roboto'
 `;
-
-const FormContainer = styled.div`
-  height: 600px;
-  border: 1px solid black;
-
-`
 
 export function App() {
   return (
     <StyledApp>
-      <FormContainer>
-         <SubscribeForm />
-      </FormContainer>
+      <SubscribeForm />
     </StyledApp>
   );
 }
