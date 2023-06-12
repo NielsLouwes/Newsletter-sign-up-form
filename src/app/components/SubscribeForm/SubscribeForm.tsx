@@ -32,19 +32,32 @@ export function SubscribeForm() {
           // Fake a network request
           await new Promise((resolve) => setTimeout(resolve, 500));
           // Form submission logic goes here
-         setStatus({ success: true, email: values.email });
+          setStatus({ success: true, email: values.email });
           setSubmitting(false);
         }}
       >
-        {({ isSubmitting, errors, status }) =>
+        {({ isSubmitting, errors, status, resetForm }) =>
           status && status.success ? (
             <SubscribeFormStyled.SuccessForm>
-              <img src={Icon} alt="" height="50px" width="50px" />
-              <SubscribeFormStyled.MainTitle>Thank you for subscribing!</SubscribeFormStyled.MainTitle>
-              <body>A confirmation email has been sent to {status.email} Please open it and click the button inside to confirm your subscription</body>
-              </SubscribeFormStyled.SuccessForm>
+              <SubscribeFormStyled.ContentContainer>
+                <img src={Icon} alt="" height="50px" width="50px" />
+                <SubscribeFormStyled.MainTitle>
+                  Thank you for subscribing!
+                </SubscribeFormStyled.MainTitle>
+                <body>
+                  A confirmation email has been sent to{' '}
+                  <strong>{status.email}</strong>. Please open it and click the
+                  button inside to confirm your subscription
+                </body>
+              </SubscribeFormStyled.ContentContainer>
+              <SubscribeFormStyled.FormButton onClick={resetForm}>
+                Dismiss message
+              </SubscribeFormStyled.FormButton>
+            </SubscribeFormStyled.SuccessForm>
           ) : (
-            <SubscribeFormStyled.BodyContainer>
+            <>
+              <img src={logoMobile} alt="" height="auto" width="375px" />
+              <SubscribeFormStyled.BodyContainer>
                 <SubscribeFormStyled.MainTitle>
                   Stay updated!
                 </SubscribeFormStyled.MainTitle>
@@ -70,14 +83,15 @@ export function SubscribeForm() {
                       placeholder="email@company.com"
                     />
                   </SubscribeFormStyled.BottomFormContainer>
-                  <SubscribeFormStyled.SubscribeButton
+                  <SubscribeFormStyled.FormButton
                     type="submit"
                     disabled={isSubmitting}
                   >
                     Subscribe to monthly newsletter
-                  </SubscribeFormStyled.SubscribeButton>
+                  </SubscribeFormStyled.FormButton>
                 </Form>
               </SubscribeFormStyled.BodyContainer>
+            </>
           )
         }
       </Formik>

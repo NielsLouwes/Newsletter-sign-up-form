@@ -5,6 +5,7 @@ const FormContainer = styled.div`
   border: 1px solid black;
   width: 375px;
   background: white;
+  height: 800px;
 `;
 
 const MainTitle = styled.h1`
@@ -22,7 +23,7 @@ const BottomFormContainer = styled.div`
   flex-direction: column;
 `;
 
-const SubscribeButton = styled.button`
+const FormButton = styled.button`
   width: 99%;
   color: white;
   background: hsl(234, 29%, 20%);
@@ -30,6 +31,15 @@ const SubscribeButton = styled.button`
   padding: 15px;
   font-size: 1rem;
   cursor: pointer;
+  justify-content: space-between;
+  transition: 0.3s; 
+
+  &:hover {
+    background-color: hsl(4, 100%, 67%); 
+    border: none;
+  }
+
+
 `;
 
 const StyledField = styled(Field)`
@@ -69,19 +79,29 @@ const EmailContainer = styled.div`
 const SuccessForm = styled.div`
   width: 375px;
   background: white;
-  height: 750px;
   font-family: 'Roboto';
+  padding: 15px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
 `;
+
+const ContentContainer = styled.div`
+  margin-bottom: 250px;
+  margin-top: 150px;
+   gap: 15px;
+`
 
 export const SubscribeFormStyled = {
   FormContainer,
   BodyContainer,
   BottomFormContainer,
-  SubscribeButton,
+  FormButton,
   StyledField,
   EmailTitle,
   StyledError,
   EmailContainer,
   MainTitle,
-  SuccessForm
+  SuccessForm,
+  ContentContainer
 };
