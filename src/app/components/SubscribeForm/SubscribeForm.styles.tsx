@@ -38,8 +38,6 @@ const FormButton = styled.button`
     background-color: hsl(4, 100%, 67%); 
     border: none;
   }
-
-
 `;
 
 const StyledField = styled(Field)`
@@ -84,12 +82,12 @@ const SuccessForm = styled.div`
   height: 800px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 `;
 
 const ContentContainer = styled.div`
-  margin-bottom: 250px;
   margin-top: 150px;
-   gap: 15px;
+  gap: 15px;
 `
 
 export const SubscribeFormStyled = {

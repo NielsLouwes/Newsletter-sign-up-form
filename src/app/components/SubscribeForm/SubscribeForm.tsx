@@ -6,6 +6,7 @@ import { SubscribeFormStyled } from './SubscribeForm.styles';
 import { ListItem } from '../ListItem/ListItem';
 
 import { Formik, Form } from 'formik';
+import SuccessForm from '../SuccessForm/SuccessForm';
 
 // Validation schema
 const validationSchema = Yup.object().shape({
@@ -38,22 +39,7 @@ export function SubscribeForm() {
       >
         {({ isSubmitting, errors, status, resetForm }) =>
           status && status.success ? (
-            <SubscribeFormStyled.SuccessForm>
-              <SubscribeFormStyled.ContentContainer>
-                <img src={Icon} alt="" height="50px" width="50px" />
-                <SubscribeFormStyled.MainTitle>
-                  Thank you for subscribing!
-                </SubscribeFormStyled.MainTitle>
-                <body>
-                  A confirmation email has been sent to{' '}
-                  <strong>{status.email}</strong>. Please open it and click the
-                  button inside to confirm your subscription
-                </body>
-              </SubscribeFormStyled.ContentContainer>
-              <SubscribeFormStyled.FormButton onClick={resetForm}>
-                Dismiss message
-              </SubscribeFormStyled.FormButton>
-            </SubscribeFormStyled.SuccessForm>
+            <SuccessForm email={status.email} resetForm={resetForm} />
           ) : (
             <>
               <img src={logoMobile} alt="" height="auto" width="375px" />
