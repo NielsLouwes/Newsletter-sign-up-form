@@ -6,16 +6,62 @@ const FormContainer = styled.div`
   width: 375px;
   background: white;
   height: 800px;
+
+  @media (width > 1200px) {
+    display: flex;
+    width: 1000px;
+    height: 600px;
+    border-radius: 15px;
+  }
+`;
+
+const SubscribeContainer = styled.div`
+  @media (width > 1200px) {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+`;
+
+const ImageContainer = styled.div`
+  @media (width > 1200px) {
+    display: flex;
+    width: 50%;
+    border-radius: 15px;
+    padding: 15px;
+    overflow: hidden;
+  }
+`;
+
+const Image = styled.img`
+  width: 375px;
+  height: auto;
+
+  @media (width > 1200px) {
+    width: 98%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+  }
 `;
 
 const MainTitle = styled.h1`
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin: 8px;
   margin-bottom: 25px;
 `;
 
 const BodyContainer = styled.div`
   padding: 15px;
+  flex: 1;
+
+  @media (width > 1200px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px;
+  }
 `;
 
 const BottomFormContainer = styled.div`
@@ -31,11 +77,10 @@ const FormButton = styled.button`
   padding: 15px;
   font-size: 1rem;
   cursor: pointer;
-  justify-content: space-between;
-  transition: 0.3s; 
+  transition: 0.3s;
 
   &:hover {
-    background-color: hsl(4, 100%, 67%); 
+    background-color: hsl(4, 100%, 67%);
     border: none;
   }
 `;
@@ -88,7 +133,7 @@ const SuccessForm = styled.div`
 const ContentContainer = styled.div`
   margin-top: 150px;
   gap: 15px;
-`
+`;
 
 export const SubscribeFormStyled = {
   FormContainer,
@@ -101,5 +146,8 @@ export const SubscribeFormStyled = {
   EmailContainer,
   MainTitle,
   SuccessForm,
-  ContentContainer
+  ContentContainer,
+  SubscribeContainer,
+  Image,
+  ImageContainer,
 };

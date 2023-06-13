@@ -41,8 +41,10 @@ export function SubscribeForm() {
           status && status.success ? (
             <SuccessForm email={status.email} resetForm={resetForm} />
           ) : (
-            <>
-              <img src={logoMobile} alt="" height="auto" width="375px" />
+            <SubscribeFormStyled.SubscribeContainer>
+              <SubscribeFormStyled.ImageContainer>
+                <SubscribeFormStyled.Image src={logoMobile} alt="" />
+              </SubscribeFormStyled.ImageContainer>
               <SubscribeFormStyled.BodyContainer>
                 <SubscribeFormStyled.MainTitle>
                   Stay updated!
@@ -77,7 +79,7 @@ export function SubscribeForm() {
                   </SubscribeFormStyled.FormButton>
                 </Form>
               </SubscribeFormStyled.BodyContainer>
-            </>
+            </SubscribeFormStyled.SubscribeContainer>
           )
         }
       </Formik>
