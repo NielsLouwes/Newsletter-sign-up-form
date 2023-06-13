@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { SubscribeForm } from './components/SubscribeForm/SubscribeForm';
+import { ParentFormComponent } from './components/ParentFormComponent/ParentFormComponent';
 
 const StyledApp = styled.div`
   display: flex;
@@ -13,7 +13,7 @@ const StyledApp = styled.div`
 export function App() {
   return (
     <StyledApp>
-      <SubscribeForm />
+      <ParentFormComponent />
     </StyledApp>
   );
 }

@@ -1,4 +1,3 @@
-import React from 'react';
 import { SubscribeFormStyled } from './SuccessForm.styles';
 import Icon from '../../assets/icon-list.svg';
 import { FormikState } from 'formik';

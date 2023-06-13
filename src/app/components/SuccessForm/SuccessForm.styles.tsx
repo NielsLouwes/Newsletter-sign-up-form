@@ -32,6 +32,12 @@ const SuccessForm = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+   @media (width > 1200px) {
+    height: auto;
+    border-radius: 15px;
+    align-items: space-between;
+  }
 `;
 
 const ContentContainer = styled.div`
